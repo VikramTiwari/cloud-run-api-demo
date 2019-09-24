@@ -4,6 +4,8 @@ const cors = require('cors')
 
 const app = express()
 
+const geoip = require('geo-from-ip')
+
 // default body size
 const BODY_LIMIT = process.env.BODY_LIMIT || '10mb'
 
@@ -17,6 +19,14 @@ app.set('trust proxy', true)
 // for health checks
 app.get('/', (req, res) => {
   res.status(200).send(req.query)
+})
+
+app.get('/geo', (req, res) => {
+  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+  console.log(`Getting geo data for ip: ${ip}`)
+  const geo = geoip.allData(ip)
+  console.log(`Geo data for the IP: ${JSON.stringify(geo)}`)
+  res.status(200).send(geo)
 })
 
 module.exports = app // for testing
