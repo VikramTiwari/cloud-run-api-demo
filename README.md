@@ -13,3 +13,9 @@ Use different branches for demos of different features:
 ## Deploy on Cloud Run
 
 [![Run on Google Cloud](https://storage.googleapis.com/cloudrun/button.svg)](https://console.cloud.google.com/cloudshell/editor?shellonly=true&cloudshell_image=gcr.io/cloudrun/button&cloudshell_git_repo=https://github.com/VikramTiwari/api-cloud-run-demo.git)
+
+Using CLI:
+
+```sh
+source ./deploy.sh
+```
