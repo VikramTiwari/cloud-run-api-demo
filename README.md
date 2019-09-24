@@ -2,7 +2,13 @@
 
 API server which demos various features of Cloud Run
 
-## Basics
+## Feature branches
+
+Use different branches for demos of different features:
+
+- Deploy health-check API using cloud run button (master)
+- Deploy geo-from-ip API (geo-from-ip)
+- Deploy geo-from-ip API with env variables (geo-from-ip-env-variables)
 
 ## Deploy on Cloud Run
 
