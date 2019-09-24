@@ -22,7 +22,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/geo', (req, res) => {
-  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+  const token = req.query.token
+  if (token !== process.env.SECRET_TOKEN) {
+    return res.status(403).send()
+  }
+  const ip = req.query.ip
   console.log(`Getting geo data for ip: ${ip}`)
   const geo = geoip.allData(ip)
   console.log(`Geo data for the IP: ${JSON.stringify(geo)}`)

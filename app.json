@@ -1,0 +1,10 @@
+{
+  "name": "cloud-run-api-demo-geo-from-ip-env",
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "Specify a secret token value for your app",
+      "value": "42",
+      "required": true
+    }
+  }
+}
